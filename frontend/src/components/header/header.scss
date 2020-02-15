@@ -1,0 +1,58 @@
+.navbar{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #333545;
+    padding: 20px 0;
+    margin-bottom: 10px;
+  }
+
+  .cities{
+ display: flex;
+ list-style: none;
+ justify-content: space-between;
+ 
+ p{
+    color: #3b5998;
+ }
+ p:hover{
+ text-decoration: underline;
+ }
+  }
+
+  .citytitle{
+      text-align: center;
+  }
+  .langbtn{
+    border: none;
+    background-color:  #333545;
+  }
+  .searchbox{
+    input{
+    border-radius: 5px;
+    width: 40rem;
+    height: 36px;
+    border: 0px;
+    background: url("https://img.icons8.com/ios-glyphs/30/000000/search.png") top left  no-repeat;
+    padding-left:40px;   
+ background-color: white;
+  }
+  }
+.logobms{
+    display: flex;
+    h6{
+ font-size: 23px;
+ color:white;
+ font-family: 'Inconsolata', monospace;
+    }
+}
+
+
+ .navbar{ ul{
+      display: flex;
+      list-style: none;
+  li{
+    padding: 0 10px;
+  }
+}
+ }

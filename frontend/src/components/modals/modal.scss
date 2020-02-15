@@ -1,0 +1,40 @@
+.fbBtn{
+    height: 40px;
+    width: 200px;
+    background-color: #3b5998;
+    color: white;
+    margin-bottom: 10px;
+  }
+  .gbtn{
+    margin-bottom: 10px;
+    background: #db3236;
+    color: white;
+  }
+  .login{.emailinput {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    
+  }}
+  /*resend modal */
+   .resendinput{
+       width: 90%;
+       outline: 0;
+       border: 0;
+       background: transparent;
+       border-bottom: 1px solid grey;;
+   }
+  .resend{
+      margin:auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      p{
+          font-size: 15px;
+          color: grey;
+      }
+  }
