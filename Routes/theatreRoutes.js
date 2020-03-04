@@ -48,6 +48,9 @@ router.get("/movie",(req,res) => {
         })
 })
 
+
+
+
 router.post('/addtheatre',(req,res)=> {
     const data = {
         name : req.body.name,
