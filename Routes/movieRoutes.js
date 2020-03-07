@@ -12,12 +12,14 @@ router.get('/',(req,res) =>
     movieModel.findAll()
         .then(movies => {
             console.log(movies);
-            res.sendStatus(200)
+            res.json(movies)
             
         })
         .catch(err => console.log(err))
 
 )
+
+
 
 router.get("/getMovies",(req,res) => {
     const name = req.body.name.toString();

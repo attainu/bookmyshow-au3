@@ -9,7 +9,7 @@ const bmstheatres = db.define('bmstheatres',{
         type : Sequelize.STRING
     },
     seats : {
-        type : Sequelize.INTEGER
+        type : Sequelize.INTEGER.UNSIGNED.ZEROFILL
     },
     movie : {
         type : Sequelize.STRING
