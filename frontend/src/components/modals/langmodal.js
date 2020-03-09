@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalBody } from 'reactstrap';
 import Delhi from "./cityicon/Delhi.png"
 import Banglore from "./cityicon/Bangalore.png"
 import Hyderabd from "./cityicon/Hyderabad.png"
@@ -25,10 +25,10 @@ const Langmodal = (props) => {
         <ModalBody>
 <h6 className="citytitle"> Popular cities</h6>  
     <ul className="cities">
-    <li onClick={()=>changeCity("Delhi")} ><img src={Delhi}/><p>Delhi</p></li>
-    <li onClick={()=>changeCity("Mumbai")}><img src={Mumbai}/><p>Mumbai</p></li>
-    <li onClick={()=>changeCity("Banglore")}><img src={Banglore}/><p>Bangalore</p></li>
-    <li onClick={()=>changeCity("Hyderabad")}><img src={Hyderabd}/><p>Hyderabad</p></li>
+    <li onClick={()=>changeCity("Delhi")} ><img src={Delhi} alt="..."/><p>Delhi</p></li>
+    <li onClick={()=>changeCity("Mumbai")}><img src={Mumbai} alt="..."/><p>Mumbai</p></li>
+    <li onClick={()=>changeCity("Banglore")}><img src={Banglore} alt="..."/><p>Bangalore</p></li>
+    <li onClick={()=>changeCity("Hyderabad")}><img src={Hyderabd} alt="..."/><p>Hyderabad</p></li>
     </ul> 
          </ModalBody>
       </Modal>

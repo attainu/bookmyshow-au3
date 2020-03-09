@@ -5,7 +5,7 @@ const Carousel=()=>{
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "250px",
+    centerPadding: "290px",
     slidesToShow: 1,
     autoplay: true,
     autoplaySpeed: 2500  };
@@ -22,7 +22,7 @@ const Carousel=()=>{
           <img src="https://in.bmscdn.com/showcaseimage/eventimage/malang--unleash-the-madness-05-02-2020-05-56-59-270.jpg"  alt="..."/>
           </div>
           <div>
-            <img src="https://in.bmscdn.com/showcaseimage/eventimage/love-aaj-kal-13-02-2020-12-58-23-127.jpg"/>
+            <img src="https://in.bmscdn.com/showcaseimage/eventimage/love-aaj-kal-13-02-2020-12-58-23-127.jpg"alt="..."/>
           </div>
         </Slider>
     </div>

@@ -13,7 +13,7 @@ max-width: 100%;
 .filter{
   display: flex;
     list-style: none;
- justify-content: space-around;
+ justify-content: space-evenly;
  align-items: center;
  li:hover{
    color:blue;
@@ -46,6 +46,9 @@ max-width: 100%;
   span:hover{
  text-decoration: underline;
   }
+}
+.movietitle{
+  text-decoration: underline red;
 }
 /*footer*/
 .footer{

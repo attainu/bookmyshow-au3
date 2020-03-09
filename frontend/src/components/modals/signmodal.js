@@ -1,5 +1,5 @@
-import React, { useState, Fragment } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import React, { useState } from 'react';
+import { Button, Modal, ModalBody } from 'reactstrap';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login'; 
 import "./modal.scss"
@@ -12,7 +12,7 @@ const SignInModal = (props) => {
 
   const [signupStatus,setsignup]= useState(true)
   const toggle = (modal) => {
-    if(modal==modal1) setModal1(!modal)
+    if(modal===modal1) setModal1(!modal)
   else setModal2(!modal)};
  const changestatus =()=>{
    setsignup(!signupStatus)

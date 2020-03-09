@@ -1,0 +1,14 @@
+.desc{
+    background-color: gray;
+    color: white;
+    height: 40%;   
+}
+
+.trailer{
+    button {
+        display: none;
+    }
+    img:hover + button, button:hover {
+        display: inline-block;
+    }
+}
