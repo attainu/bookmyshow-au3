@@ -10,6 +10,7 @@ const Carousel=()=>{
     autoplay: true,
     autoplaySpeed: 2500  };
   return(
+    <div className="container-fluid">
     <div className="carousel">
 <Slider   {...settings}>
           <div>
@@ -25,6 +26,7 @@ const Carousel=()=>{
             <img src="https://in.bmscdn.com/showcaseimage/eventimage/love-aaj-kal-13-02-2020-12-58-23-127.jpg"alt="..."/>
           </div>
         </Slider>
+    </div>
     </div>
   )
 }

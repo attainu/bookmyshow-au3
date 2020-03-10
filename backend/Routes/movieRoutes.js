@@ -21,11 +21,11 @@ router.get('/',(req,res) =>
 
 router.get("/getMovies/:name",(req,res) => {
     const name = req.params.name;
-    console.log(name);
+   // console.log(name);
     movieModel.findOne({where : {name : {[Op.eq] : name}}})
         .then(
             movie => {
-                console.log(movie);
+                //console.log(movie);
                 res.json(movie)
             }
         )

@@ -24,7 +24,7 @@ router.get("/location",(req,res) => {
     theatreModel.findAll({where : {location : {[Op.eq] : location}}})
         .then(
             theatre => {
-                console.log(theatre);
+             //   console.log(theatre);
                 res.json(theatre)
             }
         )
@@ -76,9 +76,10 @@ router.post('/addtheatre',(req,res)=> {
 
 })
 
-router.get("/bookticket",(req,res) => {
-    let tickets = parseInt(req.body.tickets); let name = req.body.name.toString().toLowerCase();
-    let location = req.body.location.toString().toLowerCase(); let email = req.body.email; let movie = req.body.movie
+router.post("/bookticket",(req,res) => {
+    console.log(req.body)
+    let tickets = req.body.tickets; let name = req.body.name;
+    let location = req.body.location; let email = req.body.email; let movie = req.body.movie
     
     let otp = Math.floor(1000 + Math.random() * 9000);
 

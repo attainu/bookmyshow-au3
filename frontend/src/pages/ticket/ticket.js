@@ -1,63 +1,91 @@
-import React, { Fragment,useContext,useEffect } from "react";
+import React, { Fragment,useContext,useState } from "react";
 import Header from "../../components/header/header";
 import Footer from "../../components/footer";
 import { store } from '../../store/store';
+import axios from 'axios';
 
 const Ticket=()=>{
     const {state} = useContext(store);
-    handleSubmit = event => {
-      event.preventDefault();
-      const user = {
-        name: this.state.name
-      }
-      axios.post('https://jsonplaceholder.typicode.com/users', { user })
-        .then(res=>{
+    const [data,setdata]=useState({email:"",mobile:""});
+    const result={
+      email:data.email,
+      name:state.theatre,
+      location:state.location,
+      tickets:state.seat,
+      movie:state.movie
+    }
+  //console.log(state)
+
+   const handleSubmit = (e) => {
+ 
+     console.log(result);
+     axios.post( '/theatres/bookticket',{"body":{"name":"nilesh"}},{
+      headers: {'Content-Type': 'application/json' }
+     })
+      .then(function (response) {
+          //handle success
+          console.log(response);
+      })
+      .catch(function (response) {
+          //handle error
+          console.log(response);
+      });
+    }
+    /* axios.post('/theatres/bookticket', {
+      firstName: 'Fred',
+      lastName: 'Flintstone'
+    }).then(res=>{
           console.log(res);
           console.log(res.data);
-          window.location = "/" //This line of code will redirect you once the submission is succeed
+          alert("booking done");
+         // window.location = "/" //This line of code will redirect you once the submission is succeed
         })
+    } */
+   const handleChange = (e) =>{
+      setdata({...data,[e.target.name]:e.target.value});
+      console.log(data)
     }
     return(
     <Fragment>
         <Header/>
     <div className="container ">
-        <div class="row my-3">
-        <div class="col-md-6 offset-md-3 ">
+        <div className="row my-3">
+        <div className="col-md-6 offset-md-3 ">
         <h6> Booking Details</h6>
 <h5>{state.movie}</h5>
-        <table class="table table-striped">
+        <table className="table table-striped">
  
   <tbody>
     <tr>
       <th scope="row">Date</th>
-<td colspan="3">{state.date}</td>
+      <td colSpan ="3">{state.date}</td>
     </tr>
     <tr>
       <th scope="row">Theatre</th>
-      <td colspan="3">{state.theatre}</td>
+      <td colSpan="3">{state.theatre}</td>
     </tr>
     <tr>
       <th scope="row">Timing</th>
-      <td colspan="3">09:00 am</td>
+      <td colSpan="3">09:00 am</td>
     </tr>
     <tr>
       <th scope="row">Seats selected</th>
-<td colspan="3">{state.seat}</td>
+       <td colSpan="3">{state.seat}</td>
     </tr>
   </tbody>
 </table>
 <hr/>
 <h5>Contact Details</h5>
-<hr/>
-<form className="form-inline" onSubmit = {handleSubmit()} >
-  <div className="form-group mx-sm-3 mb-2">
-    <input type="email" class="form-control" id="inputPassword2" name="email" placeholder="Email" required/>
-  </div>
-  <div className="form-group mx-sm-3 mb-2">
-    <input type="number" class="form-control" id="inputPassword2" name="mobile" placeholder="Mobile" required/>
-  </div>
-  <button type="submit" class="btn btn-primary  btn-block mb-2">Confirm Booking</button>
-</form>
+<hr/> 
+        <div className="form-inline"  >
+          <div className="form-group mx-sm-3 mb-2">
+            <input type="email" className="form-control" onChange={(e)=>handleChange(e)} id="email" name="email" placeholder="Email" required/>
+          </div>
+          <div className="form-group mx-sm-3 mb-2">
+            <input type="number" className="form-control" onChange={(e)=>handleChange(e)} id="mobile" name="mobile" placeholder="Mobile" required/>
+          </div>
+          <button type="button"  onClick={()=>handleSubmit()} className="btn btn-primary  btn-block mb-2">Confirm Booking</button>
+        </div>
             </div>
        </div>
     </div>
