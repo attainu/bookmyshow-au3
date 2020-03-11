@@ -1,0 +1,28 @@
+{
+  "name": "bookmyshow-au3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attainu/bookmyshow-au3.git"
+  },
+  "author": "Nilesh Kumar Singh, Balaji Kamalesan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/attainu/bookmyshow-au3/issues"
+  },
+  "homepage": "https://github.com/attainu/bookmyshow-au3#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.4",
+    "nodemailer": "^6.4.4",
+    "pg": "^7.18.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.5"
+  }
+}
