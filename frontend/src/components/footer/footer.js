@@ -1,10 +1,10 @@
 import React from "react";
-import logo from './header/logo.png';
-import Resendmodal from "./modals/resend";
-import Newsmodal from "./modals/newsletter";
+import logo from '../header/logo.png';
+import Resendmodal from "../modals/resend";
+import Newsmodal from "../modals/newsletter";
 const Footer=()=>{
     return(
-    <div className="foot">
+    <div className="foot ">
         <section className="footer">
             <div>
             <img src="https://img.icons8.com/cotton/64/000000/online-support.png" alt="..."/>

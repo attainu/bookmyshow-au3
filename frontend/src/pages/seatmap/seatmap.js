@@ -1,6 +1,6 @@
 import React,{useContext} from "react";
 import Header from "../../components/header/header";
-import Footer from "../../components/footer";
+import Footer from "../../components/footer/footer";
 import { store } from '../../store/store';
 import Sidebar from "../../components/seatsidebar";
 const SeatMap=()=> {

@@ -3,7 +3,7 @@ import Header from '../../components/header/header';
 import './App.scss';
 import Carousel from "../../components/carousel";
 import NowShowing from '../../components/showingmovies';
-import Footer from '../../components/footer';
+import Footer from '../../components/footer/footer';
 import LanguageFilter from '../../components/filter';
 
 function App() {

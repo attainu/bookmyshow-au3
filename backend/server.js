@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({
   }));
 
 // User Routes
+app.use(bodyParser.json())
 
 app.use('/users',require("./Routes/userRoutes"))
 

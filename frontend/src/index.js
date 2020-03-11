@@ -4,7 +4,8 @@ import App from './pages/Home/App';
 import Notfound from "./pages/notfound"
 import Theatre from "./pages/theatre/theatre"
 import Seatmap from "./pages/seatmap/seatmap"
-import Ticket from "./pages/ticket/ticket"
+import Ticket from "./pages/ticket/ticket";
+import Login from "./pages/login/login"
 import './index.scss';
 import {BrowserRouter as Router,Route, Switch} from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,6 +19,7 @@ const routing = (
         <Route path="/theatre/:name" component={Theatre} />
         <Route path="/seatmap" component={Seatmap} />
         <Route path="/ticket" component={Ticket} />
+        <Route path="/login" component={Login} />
         <Route component={Notfound} />
         </Switch>
       </div>

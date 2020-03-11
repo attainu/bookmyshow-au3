@@ -2,7 +2,7 @@ import React ,{useState, useEffect}from "react";
 import axios from 'axios';
 import "./theatre.scss"
 import Header from "../../components/header/header";
-import Footer from "../../components/footer";
+import Footer from "../../components/footer/footer";
 import Desc from "../../components/moviesdes/desc";
 import Theatrecard from "../../components/theatrecard";
 
