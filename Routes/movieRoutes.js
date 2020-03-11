@@ -11,22 +11,21 @@ const Op = Sequelize.Op;
 router.get('/',(req,res) => 
     movieModel.findAll()
         .then(movies => {
-            console.log(movies);
-            res.json(movies)
+            console.log("data fecthed");
+            res.send(movies)
             
         })
         .catch(err => console.log(err))
 
 )
 
-
-
-router.get("/getMovies",(req,res) => {
-    const name = req.body.name.toString();
-    movieModel.findAll({where : {name : {[Op.eq] : name}}})
+router.get("/getMovies/:name",(req,res) => {
+    const name = req.params.name;
+   // console.log(name);
+    movieModel.findOne({where : {name : {[Op.eq] : name}}})
         .then(
             movie => {
-                console.log(movie);
+                //console.log(movie);
                 res.json(movie)
             }
         )

@@ -16,7 +16,17 @@ const bmsmovies= db.define('bmsmovies',{
     },
     category : {
         type : Sequelize.STRING
+    },
+   director:{
+        type : Sequelize.STRING
+    },
+    releasedate:{
+        type : Sequelize.DATEONLY   
+    },
+    duration:{
+        type : Sequelize.TEXT
     }
+
 
 })
 

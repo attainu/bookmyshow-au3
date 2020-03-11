@@ -1,19 +1,19 @@
 const express = require("express");
+const  nodemailer= require("nodemailer");
 const app = express();
 const router = express.Router();
 const db = require('../Config/database');
 const theatreModel = require("../Modals/theatre")
 const Sequelize = require("sequelize")
 const Op = Sequelize.Op;
-const nodemailer = require("nodemailer");
 
 
 
 router.get('/',(req,res) => 
     theatreModel.findAll()
         .then(theatre => {
-            console.log(theatre);
-            res.sendStatus(200)
+            console.log("theatres fetched");
+            res.send(theatre)
             
         })
         .catch(err => console.log(err))
@@ -22,10 +22,10 @@ router.get('/',(req,res) =>
 
 router.get("/location",(req,res) => {
     const location = req.body.location.toString().toLowerCase();
-    theatreModel.findAll({where : {name : {[Op.eq] : name},location : {[Op.eq] : location}}})
+    theatreModel.findAll({where : {location : {[Op.eq] : location}}})
         .then(
             theatre => {
-                console.log(theatre);
+             //   console.log(theatre);
                 res.json(theatre)
             }
         )
@@ -49,9 +49,38 @@ router.get("/movie",(req,res) => {
         })
 })
 
-router.get("/bookticket",(req,res) => {
-    let tickets = parseInt(req.body.tickets); let name = req.body.name.toString().toLowerCase();
-    let location = req.body.location.toString().toLowerCase(); let email = req.body.email; let movie = req.body.movie
+
+
+
+router.post('/addtheatre',(req,res)=> {
+    const data = {
+        name : req.body.name,
+        movie : req.body.movie.toLowerCase(),
+        seats : req.body.seats,
+        location : req.body.location.toLowerCase()
+    }
+
+ 
+    console.log(data)
+    let {name,location,seats,movie} = data;
+    
+    // Inserting into db
+    theatreModel.create({
+        name,
+        location,
+        seats,
+        movie
+          
+    })
+    .then(user => res.redirect('/theatres'))
+    .catch(err=> console.log("Err"))
+
+})
+
+router.post("/bookticket",(req,res) => {
+    console.log(req.body)
+    let tickets = req.body.tickets; let name = req.body.name;
+    let location = req.body.location; let email = req.body.email; let movie = req.body.movie
     
     let otp = Math.floor(1000 + Math.random() * 9000);
 
@@ -60,7 +89,6 @@ router.get("/bookticket",(req,res) => {
             const output = `
             Hi ${name}, 
             Here is your ticket for 
-
             Theatre Name  : ${name}
             Movie Name : ${movie}
             No of Tickets Booked ${tickets}
@@ -94,7 +122,6 @@ router.get("/bookticket",(req,res) => {
               text: output, // plain text body
               html: `
               <h3>Hi ${email} </h3>, 
-
               <strong>
               <p>Here is your ticket for 
               <br>
@@ -114,7 +141,7 @@ router.get("/bookticket",(req,res) => {
             console.log("Message sent: %s", info.messageId);
             
             console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-            res.send(`You can view the ticket here : ${nodemailer.getTestMessageUrl(info)} `)
+            res.send(nodemailer.getTestMessageUrl(info))
          
           }
           
@@ -126,37 +153,5 @@ router.get("/bookticket",(req,res) => {
         
 
 })
-
-
-
-
-router.post('/addtheatre',(req,res)=> {
-    const data = {
-        name : req.body.name.toLowerCase(),
-        movie : req.body.movie.toLowerCase(),
-        seats : req.body.seats,
-        location : req.body.location.toLowerCase()
-    }
-
- 
-    console.log(data)
-    let {name,location,seats,movie} = data;
-    
-    // Inserting into db
-    theatreModel.create({
-        name,
-        location,
-        seats,
-        movie
-          
-    })
-    .then(user => res.redirect('/theatres'))
-    .catch(err=> console.log("Err"))
-
-})
-
-
-
-
 
 module.exports = router;
