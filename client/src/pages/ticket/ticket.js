@@ -25,7 +25,7 @@ const Ticket=()=>{
       .then(response=> {
           //handle success
           console.log(response);
-          alert("you can view ur email at:",{response});
+          alert("you can view ur email at:",+{response});
           
       })
       .catch(response=>{
