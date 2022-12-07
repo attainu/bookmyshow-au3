@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/attainu/bookmyshow-au3#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "mongodb": "^3.5.4",
     "nodemailer": "^6.4.4",
     "pg": "^7.18.2",
